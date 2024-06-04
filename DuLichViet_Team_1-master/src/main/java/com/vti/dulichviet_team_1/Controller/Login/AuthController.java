@@ -36,8 +36,9 @@ public class AuthController {
     @PostMapping("/login-jwt")
     public LoginDto loginDto (@RequestBody LoginRequest loginRequest) {
 
-        Optional<Account> optionalAccount = accountRepository.findAccountByUsername(loginRequest.getUsername());
 
+
+        Optional<Account> optionalAccount = accountRepository.findAccountByUsername(loginRequest.getUsername());
         if (optionalAccount.isEmpty()) {
 
             throw new AppException(ErrorEnum.NOT_FOUND_USERNAME);
@@ -45,12 +46,13 @@ public class AuthController {
 
        Account account = optionalAccount.get();
 
-        System.out.println(account);
-
 //        SO SANH PASSWORD MA NGUOI DUNG NHAP VAO SO VOI PASSWORD CO TRONG DATEBASE
 
         boolean checkPassword = passwordEncoder.matches(loginRequest.getPassword(), account.getPassword());
-        if (!checkPassword) {
+        System.out.println(loginRequest.getPassword());
+        System.out.println(account.getPassword());
+        System.out.println(checkPassword);
+        if (checkPassword) {
             throw  new AppException(ErrorEnum.NOT_MATCH_PASS);
 
         }

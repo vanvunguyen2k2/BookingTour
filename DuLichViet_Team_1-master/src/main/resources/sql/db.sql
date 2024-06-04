@@ -50,7 +50,12 @@ create table booking
         foreign key (account_id) references account (id)
 );
 
-
+insert into `tour` (arrival, content, depart, duration, image, max_guest_size, price, status, title, transport, type)
+VALUES ('Hai PHong', 'Du lich Thanh Pho Hoa Phuong Do', 'Ha Noi', 2, 'https://tse4.mm.bing.net/th?id=OIP.WS6iPkjCa4-6SAXfmUO67wHaEK&pid=Api&P=0&h=180', 20, 20000000,'AVAILABLE', 'Tan huong chuyen di', 'TRAIN', 'SHORT_TOUR' ),
+       ('Da Nang', 'Du lich Thanh Pho Hoa Phuong Do', 'Ha Noi', 2, 'https://tse1.mm.bing.net/th?id=OIP.XwY-lNBl2pPnAtJhPMjmrgHaE9&pid=Api&P=0&h=180', 20, 20000000,'AVAILABLE', 'Tan huong chuyen di', 'CAR', 'TEAM_BUILDING' ),
+       ('Phu Yen', 'Du lich Thanh Pho Hoa Phuong Do', 'Ha Noi', 2, 'https://tse2.mm.bing.net/th?id=OIP.o4WY7zjmZUgjheYQloG5DQHaE7&pid=Api&P=0&h=180', 20, 20000000,'AVAILABLE', 'Tan huong chuyen di', 'AIRPLANE', 'HOT_TOUR' ),
+       ('Gia Lai', 'Du lich Thanh Pho Hoa Phuong Do', 'Ha Noi', 2, 'https://tse4.mm.bing.net/th?id=OIP.ptwg0a-0KHFc5KBCfj4pvQHaEo&pid=Api&P=0&h=180', 20, 20000000,'AVAILABLE', 'Tan huong chuyen di', 'TRAIN', 'HOLIDAY' ),
+       ('Quang Tri', 'Du lich Thanh Pho Hoa Phuong Do', 'Ha Noi', 2, 'https://tse1.mm.bing.net/th?id=OIP.1VAf6sWvMvQKUbwbbNx-GQAAAA&pid=Api&P=0&h=180', 20, 20000000,'AVAILABLE', 'Tan huong chuyen di', 'AIRPLANE', 'TEAM_BUILDING' )
 
 
 
