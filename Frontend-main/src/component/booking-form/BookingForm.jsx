@@ -10,16 +10,23 @@ import { AuthContext } from "../../context/AuthContext";
 
 const BookingForm = () => {
   const { id } = useParams();
+
   const { id: accountId, token } = useContext(AuthContext);
+  
   const {
     data: tour,
     loading,
     error,
   } = useFetch(`${BASE_URL}/api/v1/tour/viewdetail/${id}`);
+  
   const [priceTour, setPriceTour] = useState(0);
+  
   const [maxGuestSize, setMaxGuestSize] = useState(1);
+  
   const [note, setNote] = useState("");
+  
   const navigate = useNavigate();
+  
   const [form, setForm] = useState(
     {
         accountId: accountId,
@@ -33,6 +40,7 @@ const BookingForm = () => {
   let formattedPrice = new Intl.NumberFormat("vi-VN").format(parseInt(priceTour));
 
   const handleChangeGuestSize = (val) => {
+    console.log(val);
     setPriceTour(val * tour.price);
     setForm((prevData) => ({ ...prevData, guestSize: val }))
   };

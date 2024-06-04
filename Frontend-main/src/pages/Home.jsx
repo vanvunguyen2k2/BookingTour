@@ -1,12 +1,10 @@
-
 import Tours from "../component/tours/Tours";
 
-
 const Home = () => {
-    return(
-        <>
-        <Tours/>
-        </>
-    )
-}
+  return (
+    <>
+      <Tours />
+    </>
+  );
+};
 export default Home;

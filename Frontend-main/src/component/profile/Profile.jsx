@@ -11,6 +11,7 @@ const Profile = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [account, setAccount] = useState(null);
+
   useEffect(() => {
     fetchAccount();
     console.log(account)
@@ -40,17 +41,17 @@ const Profile = () => {
 
   return (
     <section className='profile'>
-      <div className='avatar'>
-      <Avatar style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}
-    size={{ xs: 48, sm: 64, md: 80, lg: 128, xl: 160, xxl: 200 }}>N</Avatar>
-    </div>
-    <h3 className='fullName'>{account?.fullName}</h3>
-    <div className='username'>{account?.username}</div>
-    <div className='personalInfo'>
-      <div>Phone: </div><label>{account?.phone}</label>
-      <div>Email: </div><label>{account?.email}</label>
-      <div>Address: </div><label>{account?.address}</label>
-    </div>
+        <div className='avatar'>
+          <Avatar style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}
+        size={{ xs: 48, sm: 64, md: 80, lg: 128, xl: 160, xxl: 200 }}>N</Avatar>
+        </div>
+        <h3 className='fullName'>{account?.fullName}</h3>
+        <div className='username'>{account?.username}</div>
+        <div className='personalInfo'>
+          <div>Phone: </div><label>{account?.phone}</label>
+          <div>Email: </div><label>{account?.email}</label>
+          <div>Address: </div><label>{account?.address}</label>
+        </div>
     </section>
   )
 }

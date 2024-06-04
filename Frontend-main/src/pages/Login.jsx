@@ -5,15 +5,22 @@ import { BsFillShieldLockFill } from 'react-icons/bs';
 import { AuthContext } from "../context/AuthContext";
 import { useContext, useState } from "react";
 const Login = () => {
-    const [credentials, setCredentials] = useState({
-        username: undefined,
-        password: undefined,
-    });
+    const [credentials, setCredentials] = useState(
+            {
+                username: undefined,
+                password: undefined,
+            }
+    );
+
+
     const { dispatch } = useContext(AuthContext);
+
     const navigate = useNavigate();
+
     const handleChange = (e) => {
         setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
     };
+
 
     const handleClick = async (e) => {
         e.preventDefault();

@@ -148,6 +148,7 @@ const HistoryBooking = () => {
         });
         // console.log(selectedRecord);
     }, [selectedRecord]);
+
     const fetchHistory = async () => {
         setLoading(true);
         try {
@@ -194,6 +195,7 @@ const HistoryBooking = () => {
                     My Booking History
                 </h3>
             </div>
+            
             <div data-aos="fade-up" className="table">
                 <Table columns={columns} dataSource={history} rowKey={(record) => record.id}
                     onRow={(record) => ({

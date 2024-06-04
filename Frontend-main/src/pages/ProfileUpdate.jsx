@@ -4,8 +4,8 @@ import Profile from "../component/profile/Profile";
 const ProfileUpdate = () => {
     return(
         <>
-        <Profile/>
-        <ProfileForm />
+            <Profile/>
+            <ProfileForm />
         </>
     )
 }

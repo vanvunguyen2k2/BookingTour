@@ -21,17 +21,24 @@ const Details = () => {
         Aos.init({ duration: 2000 });
     }, []);
     const { id } = useParams();
+
     const {
         data: tour,
         loading,
         error,
     } = useFetch(`${BASE_URL}/api/v1/tour/viewdetail/${id}`);
+
+    
     const loginRequired = () => {
         alert("Bạn phải đăng nhập để đặt tour");
         navigate("/login");
     }
+    
     const { arrival, content, depart, duration, image, maxGuestSize, price, title, transport, type } = tour;
+    
+    
     const formattedPrice = new Intl.NumberFormat("vi-VN").format(price);
+
     return (
         <>
             <section className="details container">
@@ -90,13 +97,18 @@ const Details = () => {
                     <div className="card-price">
                         <h3 className="price-title">Giá đặt tour/khách:</h3>
                         <div className="price-tag">{formattedPrice}</div>
-                        {token ? (<Link to={`/tour/booking-form/${id}`}>
-                            <button className="booking-btn btn">
-                                <a href="#"><BsFillCartCheckFill className="icon" /><span>ĐẶT TOUR</span></a>
-                            </button>
-                        </Link>) : (<button className="booking-btn btn" onClick={loginRequired}>
-                            <a href="#"><BsFillCartCheckFill className="icon" /><span>ĐẶT TOUR</span></a>
-                        </button>)}
+
+                        {token ? (  <Link to={`/tour/booking-form/${id}`}>
+                                        <button className="booking-btn btn">
+                                            <a href="#"><BsFillCartCheckFill className="icon" /><span>ĐẶT TOUR</span></a>
+                                        </button>
+                                    </Link>
+                                ) : (
+                                        <button className="booking-btn btn" onClick={loginRequired}>
+                                            <a href="#"><BsFillCartCheckFill className="icon" /><span>ĐẶT TOUR</span></a>
+                                        </button>
+                                )
+                        }
 
                     </div>
                 </div>

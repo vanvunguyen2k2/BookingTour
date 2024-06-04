@@ -22,16 +22,16 @@ const AuthReducer = (state, action) => {
         loading: true,
       };
     case "LOGIN_SUCCESS":
-      return {
-        ...state,
-        username: action.payload.username,
-        id: action.payload.id,
-        role: action.payload.role,
-        userAgent: action.payload.userAgent,
-        token: action.payload.token,
-        loading: false,
-        error: null,
-      };
+          return {
+            ...state,
+            username: action.payload.username,
+            id: action.payload.id,
+            role: action.payload.role,
+            userAgent: action.payload.userAgent,
+            token: action.payload.token,
+            loading: false,
+            error: null,
+          };
     case "LOGIN_FAILURE":
       return {
         ...state,
