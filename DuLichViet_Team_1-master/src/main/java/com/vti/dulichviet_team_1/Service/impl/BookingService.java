@@ -62,6 +62,7 @@ public class BookingService implements IBookingService {
       booking.setPrice(tour.get().getPrice());
       booking.setStatus(BookingStatus.CONFIRM);
       booking.setGuestSize(bookingCreateRequest.getGuestSize());
+
       bookingrepository.save(booking);
       // cap nhap lai maxGroupSize
       // sau khi booking thanh cong se tru di so luong nguoi trong tour dang co

@@ -40,7 +40,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     http.authorizeRequests()
 // config những API ko cần xác thực
       .antMatchers("/api/v1/tour/view_list_tour", "/api/accounts/create",
-        "/api/v1/login/login-jwt", "bookings/search"
+        "/api/v1/login/login-jwt", "bookings/search", "bookings/history"
         , "/api/accounts/search"
       ).permitAll()
       .antMatchers("/api/v1/tour/viewdetail/*").permitAll()
